@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+
+  <style>
+    
+.card {
+  display: inline-block;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+
+}
+
+.card:hover{
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+img {
+  border-radius: 8px;
+}
+
+  </style>
+</head>
+<body>
+    
+  <header>
+ <h1>Sanduku la Picha </h1>
+  </header>
+   
+
+  <!-- {% for book in books %}
+  <div class="image">  
+    <a href="/upload/ {{ book.id }}">
+  <img src="{{ book.cover.url }}" width = '300'/>
+  
+  
+    <h5>{{ book.title}}</h5>
+    <p>{{ book.description}}</p>
+    </a>
+  </div>
+   
+  {% endfor %} -->
+
+
+    {% for book in books %}
+  <div class="card" style="width:400px;">
+    <img class="card-img-top" src="{{ book.cover.url }}" alt="Card image" style="width:100%">
+    <div class="card-body">
+      <h4 class="card-title">{{ book.title}}</h4>
+      <p class="card-text">{{ book.description}}</p>
+      <a href="#" class="btn btn-primary">See Profile</a>
+    </div>
+  </div>
+  {% endfor %}
+</body>
+</html>
+

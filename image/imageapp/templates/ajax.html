@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="{% static 'jquery.min.js' %}"></script>
+</head>
+<body>
+    
+
+
+
+
+
+
+
+
+    <button type="button" onclick="loadDoc()">Change Content</button>
+
+
+<div id="ajax-response"></div>
+
+<script>
+// $(document).ready(function() {
+//     $('#ajax-button').click(function() {
+//         $.ajax({
+//             url: '{% url "get_data" %}',
+//             success: function(data) {
+//                 $('#ajax-response').text(data.message);
+//             }
+//         });
+//     });
+// });
+function loadDoc() {
+
+        $.ajax({
+            url: '{% url "get_data" %}',
+            success: function(data) {
+                $('#ajax-response').text(data.message);
+            }
+        });
+
+}
+</script>
+</body>
+</html>
+
+<!-- <button id="ajax-button">Get Data</button> -->
